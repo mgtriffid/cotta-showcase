@@ -1,0 +1,11 @@
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+dependencies {
+  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  api project(':shared')
+//  implementation "com.mgtriffid.cotta:cotta-client:$cottaVersion"
+//  implementation "com.mgtriffid.cotta:cotta-core:$cottaVersion"
+  implementation "com.mgtriffid.cotta:cotta-gdx:$cottaVersion"
+}

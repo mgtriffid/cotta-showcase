@@ -1,0 +1,11 @@
+eclipse.project.name = appName + '-shared'
+
+apply {
+  plugin("com.google.devtools.ksp")
+}
+
+dependencies {
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  implementation "com.mgtriffid.cotta:cotta-core:$cottaVersion"
+  ksp "com.mgtriffid.cotta:cotta-annotations-processor:$cottaVersion"
+}
