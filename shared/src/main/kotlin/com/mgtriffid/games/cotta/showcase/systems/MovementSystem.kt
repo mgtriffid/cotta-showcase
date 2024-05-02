@@ -8,7 +8,7 @@ import com.mgtriffid.games.cotta.showcase.WalkingDirections
 import com.mgtriffid.games.cotta.showcase.components.ControllableComponent
 import com.mgtriffid.games.cotta.showcase.components.PositionComponent
 
-@Predicted
+//@Predicted
 class MovementSystem : EntityProcessingSystem {
     override fun process(e: Entity, ctx: EntityProcessingContext) {
         if (e.hasComponent(ControllableComponent::class) &&

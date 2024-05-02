@@ -67,5 +67,6 @@ public class Main extends ApplicationAdapter {
     public void dispose() {
         batch.dispose();
         image.dispose();
+        character.dispose();
     }
 }
