@@ -1,6 +1,7 @@
 buildscript {
   repositories {
     gradlePluginPortal()
+    maven { url 'https://jitpack.io' }
   }
   dependencies {
 // using jpackage only works if the JDK version is 14 or higher.
