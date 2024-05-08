@@ -18,6 +18,7 @@ class ShowcaseInputProcessing : InputProcessing {
         val character = getCharacter(entities, playerId) ?: return
         val controllable = character.getComponent(ControllableComponent::class)
         controllable.direction = (input as ShowcasePlayerInput).walkingDirection
+        controllable.isShooting = input.isShooting
     }
 
     private fun getCharacter(entities: Entities, playerId: PlayerId): Entity? {

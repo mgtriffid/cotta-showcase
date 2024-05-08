@@ -13,18 +13,20 @@ class ShowcaseCottaClientGdxInput : CottaClientGdxInput {
             downPressed = downPressed || Gdx.input.isKeyPressed(Input.Keys.S)
             leftPressed = leftPressed || Gdx.input.isKeyPressed(Input.Keys.A)
             rightPressed = rightPressed || Gdx.input.isKeyPressed(Input.Keys.D)
+            shootPressed = shootPressed || Gdx.input.isKeyPressed(Input.Keys.SPACE)
         }
     }
 
     override fun input(): ShowcasePlayerInput {
         return ShowcasePlayerInput(
-            when {
+            walkingDirection = when {
                 storage.upPressed && !storage.downPressed -> WalkingDirections.UP
                 !storage.upPressed && storage.downPressed -> WalkingDirections.DOWN
                 storage.leftPressed && !storage.rightPressed -> WalkingDirections.LEFT
                 !storage.leftPressed && storage.rightPressed -> WalkingDirections.RIGHT
                 else -> WalkingDirections.IDLE
             },
+            isShooting = storage.shootPressed
         ).also { clear() }
     }
 
@@ -33,6 +35,7 @@ class ShowcaseCottaClientGdxInput : CottaClientGdxInput {
         storage.downPressed = false
         storage.leftPressed = false
         storage.rightPressed = false
+        storage.shootPressed = false
     }
 
     private class Storage {
@@ -40,5 +43,6 @@ class ShowcaseCottaClientGdxInput : CottaClientGdxInput {
         var downPressed: Boolean = false
         var leftPressed: Boolean = false
         var rightPressed: Boolean = false
+        var shootPressed: Boolean = false
     }
 }

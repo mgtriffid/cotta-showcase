@@ -6,6 +6,8 @@ import com.mgtriffid.games.cotta.core.config.CottaConfig
 import com.mgtriffid.games.cotta.core.input.InputProcessing
 import com.mgtriffid.games.cotta.core.systems.CottaSystem
 import com.mgtriffid.games.cotta.showcase.systems.MovementSystem
+import com.mgtriffid.games.cotta.showcase.systems.ShootEffectConsumer
+import com.mgtriffid.games.cotta.showcase.systems.ShootingSystem
 
 @Game
 class ShowcaseGame : CottaGame {
@@ -17,5 +19,9 @@ class ShowcaseGame : CottaGame {
 
     override val playersHandler = ShowcasePlayersHandler()
 
-    override val systems: List<CottaSystem> = listOf(MovementSystem())
+    override val systems: List<CottaSystem> = listOf(
+        MovementSystem(),
+        ShootingSystem(),
+        ShootEffectConsumer()
+    )
 }
