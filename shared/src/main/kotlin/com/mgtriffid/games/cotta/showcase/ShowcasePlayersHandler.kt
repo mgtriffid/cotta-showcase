@@ -7,6 +7,7 @@ import com.mgtriffid.games.cotta.core.entities.PlayerId
 import com.mgtriffid.games.cotta.showcase.components.Orientation
 import com.mgtriffid.games.cotta.showcase.components.createControllableComponent
 import com.mgtriffid.games.cotta.showcase.components.createPositionComponent
+import com.mgtriffid.games.cotta.showcase.components.createVelocityComponent
 
 class ShowcasePlayersHandler : PlayersHandler {
     override fun onEnterGame(playerId: PlayerId, entities: Entities) {
@@ -20,6 +21,10 @@ class ShowcasePlayersHandler : PlayersHandler {
                 x = 120f,
                 y = 120f,
                 orientation = Orientation.RIGHT
+            ))
+            addComponent(createVelocityComponent(
+                x = 0f,
+                y = 0f
             ))
         }
     }
